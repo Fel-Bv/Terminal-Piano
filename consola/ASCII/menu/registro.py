@@ -5,8 +5,9 @@ color = colores['fondo negro'] + colores.blanco
 opciones = ['J', 'L', 'S']
 registro = (
     # Columnas: 22
-    # Filas: 7
+    # Filas: 8
     ' +--------------------+ \n'
+    ' |      Registros     | \n'
     ' |                    | \n'
     ' | [1][2][3][4][5][6] | \n'
     ' |                    | \n'
@@ -18,7 +19,7 @@ registro = (
 def imprimir_menu_registro(registros_actuales: tuple = (4, 5), opcion: str = ''):
     opcion = opcion.upper()
 
-    lineas = (consola.lineas - 8) // 2
+    lineas = (consola.lineas - 9) // 2
     print('\n' * lineas, end='')
 
     menu = registro
