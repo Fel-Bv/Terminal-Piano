@@ -1,6 +1,6 @@
 from consola.colores import colores
 from consola.consola import consola
-from menu.registro import registros_actuales
+from menu.octavas import octavas_actuales
 
 color_default = colores.default + colores.negro
 
@@ -40,20 +40,20 @@ else:
 
 def obtener_teclas():
     return {
-        'q': f'C{registros_actuales[0]}', '2': f'C#{registros_actuales[0]}',
-        'w': f'D{registros_actuales[0]}', '3': f'D#{registros_actuales[0]}',
-        'e': f'E{registros_actuales[0]}',
-        'r': f'F{registros_actuales[0]}', '5': f'F#{registros_actuales[0]}',
-        't': f'G{registros_actuales[0]}', '6': f'G#{registros_actuales[0]}',
-        'y': f'A{registros_actuales[0]}', '7': f'A#{registros_actuales[0]}',
-        'u': f'B{registros_actuales[0]}',
-        'i': f'C{registros_actuales[1]}', '9': f'C#{registros_actuales[1]}',
-        'o': f'D{registros_actuales[1]}', '0': f'D#{registros_actuales[1]}',
-        'p': f'E{registros_actuales[1]}',
-        'z': f'F{registros_actuales[1]}', 's': f'F#{registros_actuales[1]}',
-        'x': f'G{registros_actuales[1]}', 'd': f'G#{registros_actuales[1]}',
-        'c': f'A{registros_actuales[1]}', 'f': f'A#{registros_actuales[1]}',
-        'v': f'B{registros_actuales[1]}',
+        'q': f'C{octavas_actuales[0]}', '2': f'C#{octavas_actuales[0]}',
+        'w': f'D{octavas_actuales[0]}', '3': f'D#{octavas_actuales[0]}',
+        'e': f'E{octavas_actuales[0]}',
+        'r': f'F{octavas_actuales[0]}', '5': f'F#{octavas_actuales[0]}',
+        't': f'G{octavas_actuales[0]}', '6': f'G#{octavas_actuales[0]}',
+        'y': f'A{octavas_actuales[0]}', '7': f'A#{octavas_actuales[0]}',
+        'u': f'B{octavas_actuales[0]}',
+        'i': f'C{octavas_actuales[1]}', '9': f'C#{octavas_actuales[1]}',
+        'o': f'D{octavas_actuales[1]}', '0': f'D#{octavas_actuales[1]}',
+        'p': f'E{octavas_actuales[1]}',
+        'z': f'F{octavas_actuales[1]}', 's': f'F#{octavas_actuales[1]}',
+        'x': f'G{octavas_actuales[1]}', 'd': f'G#{octavas_actuales[1]}',
+        'c': f'A{octavas_actuales[1]}', 'f': f'A#{octavas_actuales[1]}',
+        'v': f'B{octavas_actuales[1]}',
     }
 
 def imprimir_teclado():

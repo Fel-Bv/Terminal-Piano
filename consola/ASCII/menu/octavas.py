@@ -3,11 +3,11 @@ from consola.consola import consola
 
 color = colores['fondo negro'] + colores.blanco
 opciones = ['J', 'L', 'S']
-registro = (
+octava = (
     # Columnas: 22
     # Filas: 8
     ' +--------------------+ \n'
-    ' |      Registros     | \n'
+    ' |       Octavas      | \n'
     ' |                    | \n'
     ' | [1][2][3][4][5][6] | \n'
     ' |                    | \n'
@@ -16,18 +16,18 @@ registro = (
     ' +--------------------+ \n'
 )
 
-def imprimir_menu_registro(registros_actuales: tuple = (4, 5), opcion: str = ''):
+def imprimir_menu_octavas(octavas_actuales: tuple = (4, 5), opcion: str = ''):
     opcion = opcion.upper()
 
     lineas = (consola.lineas - 9) // 2
     print('\n' * lineas, end='')
 
-    menu = registro
-    for registro_ in [1, 2, 3, 4, 5, 6]:
-        if not registro_ in registros_actuales:
+    menu = octava
+    for octava_ in [1, 2, 3, 4, 5, 6]:
+        if not octava_ in octavas_actuales:
             menu = menu.replace(
-                f'[{registro_}]',
-                f'{colores.negro}[{registro_}]{color}',
+                f'[{octava_}]',
+                f'{colores.negro}[{octava_}]{color}',
             )
 
     if opcion in opciones:

@@ -1,8 +1,8 @@
 from consola.colores import colores
 from consola.consola import consola
 
-opciones = ['V', 'R', 'S']
-texto_opciones = consola.centrar_texto('[V]: Volúmen  [R]: Registro  [S]: Salir')
+opciones = ['V', 'O', 'S']
+texto_opciones = consola.centrar_texto('[V]: Volúmen  [O]: Octavas  [S]: Salir')
 color = colores['fondo blanco'] + colores.negro
 menu = (
     color +

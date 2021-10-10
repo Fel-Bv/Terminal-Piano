@@ -22,11 +22,11 @@ def imprimir_interfaz() -> None:
     global opcion_menu
 
     if opcion_menu:
-        from menu.registro import iniciar_menu_registro
+        from menu.octavas import iniciar_menu_octavas
         from menu.volumen import iniciar_menu_volumen
 
         {
-            'R': iniciar_menu_registro,
+            'O': iniciar_menu_octavas,
             'V': iniciar_menu_volumen,
             'S': consola.salir,
         }[opcion_menu]()
