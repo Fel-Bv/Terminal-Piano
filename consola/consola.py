@@ -1,10 +1,13 @@
 from consola.colores import colores
 from shutil import get_terminal_size
+import termios
 import tty
 import sys
 import os
 
 class Consola:
+    atributos_stdin = termios.tcgetattr(sys.stdin)
+
     @property
     def tamaño(self) -> int:
         tamaño_terminal = get_terminal_size()
@@ -42,7 +45,9 @@ class Consola:
     def salir(self):
         print(f'\b\b  \n{colores.verde}Saliendo...{colores.default}')
         self.mostrar_cursor()
-        # tty.setraw(sys.stdin)
+
+        termios.tcsetattr(sys.stdin, termios.TCSADRAIN, self.atributos_stdin)
+
         sys.exit(0)
 
 consola = Consola()
