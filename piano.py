@@ -7,16 +7,23 @@ from consola.ASCII.teclado import obtener_teclas
 from consola.ASCII.titulo import imprimir_titulo
 from hilos.hilo_notas import HiloReproducirNota
 from consola.consola import consola
-import os
+from sys import argv
+
 
 opcion_menu = ''
+if len(argv) > 1:
+    BPM = int(argv[1])
+else:
+    BPM = 120
+
 
 def reproducir_nota(nota: str = 'C4') -> None:
     from menu.volumen import volumen_actual
 
-    hilo = HiloReproducirNota(nota=nota, volumen=volumen_actual)
+    hilo = HiloReproducirNota(nota=nota, volumen=volumen_actual, segundos=60 / BPM)
     hilo.setDaemon(True)
     hilo.start()
+
 
 def imprimir_interfaz() -> None:
     global opcion_menu
@@ -37,6 +44,7 @@ def imprimir_interfaz() -> None:
     imprimir_titulo()
     imprimir_teclado()
     imprimir_menu(opcion_menu)
+
 
 def main() -> None:
     global opcion_menu
@@ -64,6 +72,7 @@ def main() -> None:
 
     if caracter in obtener_teclas().keys():
         reproducir_nota(obtener_teclas()[caracter])
+
 
 if __name__ == '__main__':
     try:
